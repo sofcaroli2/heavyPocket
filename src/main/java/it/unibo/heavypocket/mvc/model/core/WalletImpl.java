@@ -1,12 +1,12 @@
-package it.unibo.heavypocket.mvc.model.wallet;
+package it.unibo.heavypocket.mvc.model.core;
 
 import java.util.List;
 
 public class WalletImpl implements Wallet {
 
-    private String name;
-    private double balance;
-    private List<Transaction> transactions;
+    private final String name;
+    private final double balance;
+    private final List<Transaction> transactions;
 
     public WalletImpl(final String name, final double balance, final List<Transaction> transactions) {
         this.name = name;

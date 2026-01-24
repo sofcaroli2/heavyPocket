@@ -1,4 +1,4 @@
-package it.unibo.heavypocket.mvc.model;
+package it.unibo.heavypocket.mvc.model.core;
 
 import java.util.List;
 

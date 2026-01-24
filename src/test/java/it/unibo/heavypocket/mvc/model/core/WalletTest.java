@@ -1,4 +1,4 @@
-package it.unibo.heavypocket.mvc.model.wallet;
+package it.unibo.heavypocket.mvc.model.core;
 
 import java.util.List;
 import org.junit.jupiter.api.Test;
