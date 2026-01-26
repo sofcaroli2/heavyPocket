@@ -4,17 +4,19 @@ import java.time.LocalDate;
 import java.util.Collections;
 import java.util.Set;
 
+import it.unibo.heavypocket.mvc.model.core.TagImpl;
+
 public class ExpenseImpl extends AbstractTransaction implements Expense {
 
-    private final Set<Tag> tags;
+    private final Set<TagImpl> tags;
 
-    public ExpenseImpl(final String description, final double amount, final LocalDate date, final Set<Tag> tags) {
+    public ExpenseImpl(final String description, final double amount, final LocalDate date, final Set<TagImpl> tags) {
         super(description, amount, date);
         this.tags = Set.copyOf(tags);
     }
 
     @Override
-    public Set<Tag> getTags(){
+    public Set<TagImpl> getTags(){
         return Collections.unmodifiableSet(this.tags);
     }
 }    

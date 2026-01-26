@@ -4,5 +4,5 @@ import java.util.Set;
 
 public interface Expense extends Transaction {
     
-    Set<Tag> getTags();
+    Set<TagImpl> getTags();
 }
