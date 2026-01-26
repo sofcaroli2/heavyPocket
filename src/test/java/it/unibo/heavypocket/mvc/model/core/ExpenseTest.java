@@ -14,10 +14,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ExpenseTest {
     
     private Transaction transaction;
-    private final double AMOUNT = 100.0;
-    private final String DESCRIPTION = "TestExpense";
-    private final LocalDate DATE = LocalDate.now();
-    private final Set<Tag> TAGS = Set.of(new TagImpl("Food"));
+    private final static double AMOUNT = 100.0;
+    private final static String DESCRIPTION = "TestExpense";
+    private final static LocalDate DATE = LocalDate.now();
+    private final static Set<Tag> TAGS = Set.of(new TagImpl("Food"));
 
     @BeforeEach
     void setUp() {

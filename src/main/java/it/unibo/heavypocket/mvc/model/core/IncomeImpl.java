@@ -3,8 +3,6 @@ package it.unibo.heavypocket.mvc.model.core;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import it.unibo.heavypocket.mvc.model.core.Income;
-
 public class IncomeImpl extends AbstractTransaction implements Income {
 
     public IncomeImpl(final String description, final double amount, final LocalDate date) {

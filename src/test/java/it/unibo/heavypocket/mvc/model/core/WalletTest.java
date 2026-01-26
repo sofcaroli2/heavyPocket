@@ -14,16 +14,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class WalletTest {
 
     private Wallet wallet;
-    private final double WALLET_AMOUNT = 0.0;
-    private final String NAME = "Wallet";
-    private final List<Transaction> TRANSACTIONS = List.of();
-    private final String TRANSACTION_DESCRIPTION = "Salary";
-    private final double TRANSACTION_AMOUNT = 100.0;
-    private final LocalDate TRANSACTION_DATE = LocalDate.now();
+    private final static double WALLET_AMOUNT = 0.0;
+    private final static String NAME = "Wallet";
+    private final static List<Transaction> TRANSACTIONS = List.of();
+    private final static String TRANSACTION_DESCRIPTION = "Salary";
+    private final static double TRANSACTION_AMOUNT = 100.0;
+    private final static LocalDate TRANSACTION_DATE = LocalDate.now();
 
     @BeforeEach
     void setUp() {
-       this.wallet = new WalletImpl(NAME, WALLET_AMOUNT, TRANSACTIONS);
+        this.wallet = new WalletImpl(NAME, WALLET_AMOUNT, TRANSACTIONS);
     }
 
     @Test

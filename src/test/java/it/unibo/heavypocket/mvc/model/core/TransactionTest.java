@@ -15,9 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TransactionTest {
 
     private Transaction transaction;
-    private final double AMOUNT = 100.0;
-    private final String DESCRIPTION = "TestTransaction";
-    private final LocalDate DATE = LocalDate.now();
+    private final static double AMOUNT = 100.0;
+    private final static String DESCRIPTION = "TestTransaction";
+    private final static LocalDate DATE = LocalDate.now();
 
     @BeforeEach
     void setUp() {

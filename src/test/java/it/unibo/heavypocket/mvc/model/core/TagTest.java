@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TagTest {
     
     private Tag tag;
-    private final String TAG_NAME = "Food";
+    private final static String TAG_NAME = "Food";
 
     @BeforeEach
     void setUp() {
