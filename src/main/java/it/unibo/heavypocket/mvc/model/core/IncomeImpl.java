@@ -1,11 +1,12 @@
 package it.unibo.heavypocket.mvc.model.core;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class IncomeImpl extends AbstractTransaction implements Income {
 
-    public IncomeImpl(final String description, final double amount, final LocalDate date) {
+    public IncomeImpl(final String description, final BigDecimal amount, final LocalDate date) {
         super(description, amount, date);
     }
 

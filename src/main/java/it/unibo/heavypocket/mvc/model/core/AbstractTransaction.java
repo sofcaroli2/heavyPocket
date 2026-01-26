@@ -1,14 +1,15 @@
 package it.unibo.heavypocket.mvc.model.core;
 
 import java.time.LocalDate;
+import java.math.BigDecimal;
 
 public abstract class AbstractTransaction implements Transaction {
 
     private final String description;
-    private final double amount;
+    private final BigDecimal amount;
     private final LocalDate date;
 
-    protected AbstractTransaction(final String description, final double amount, final LocalDate date) {
+    protected AbstractTransaction(final String description, final BigDecimal amount, final LocalDate date) {
         this.description = description;
         this.amount = amount;
         this.date = date;
@@ -20,7 +21,7 @@ public abstract class AbstractTransaction implements Transaction {
     }   
 
     @Override
-    public final double getAmount() {
+    public final BigDecimal getAmount() {
         return this.amount;
     }
 

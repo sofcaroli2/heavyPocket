@@ -3,6 +3,7 @@ package it.unibo.heavypocket.mvc.model.core;
 import java.util.List;
 import java.util.Set;
 import java.time.LocalDate;
+import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TransactionTest {
 
     private Transaction transaction;
-    private final static double AMOUNT = 100.0;
+    private final static BigDecimal AMOUNT = BigDecimal.valueOf(100.0);
     private final static String DESCRIPTION = "TestTransaction";
     private final static LocalDate DATE = LocalDate.now();
 

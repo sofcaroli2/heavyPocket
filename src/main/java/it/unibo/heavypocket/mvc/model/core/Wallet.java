@@ -1,6 +1,7 @@
 package it.unibo.heavypocket.mvc.model.core;
 
 import java.util.List;
+import java.math.BigDecimal;
 
 public interface Wallet {
     
@@ -8,7 +9,7 @@ public interface Wallet {
 
     List<Transaction> getTransactions();
 
-    double getBalance();
+    BigDecimal getBalance();
 
     Wallet addTransaction(final Transaction transaction);
 }
