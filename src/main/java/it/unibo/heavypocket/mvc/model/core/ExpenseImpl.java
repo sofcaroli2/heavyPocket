@@ -1,14 +1,17 @@
 package it.unibo.heavypocket.mvc.model.core;
 
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.Set;
 
-public class ExpenseImpl implements Expense {
+public class ExpenseImpl extends AbstractTransaction implements Expense {
 
-    private String description;
-    private double amount;
-    private LocalDate date;
-    private Set<Tag> tags;
+    private final Set<Tag> tags;
+
+    public ExpenseImpl(final String description, final double amount, final LocalDate date, final Set<Tag> tags) {
+        super(description, amount, date);
+        this.tags = Set.copyOf(tags);
+    }
 
     @Override
     public String getDescription(){
@@ -16,18 +19,8 @@ public class ExpenseImpl implements Expense {
     }
     
     @Override
-    public double getAmount(){
-        return 0;
-    }
-
-    @Override
-    public LocalDate getDate(){
-        return null;
-    }
-    
-    @Override
     public Set<Tag> getTags(){
-        return null;
+        return Collections.unmodifiableSet(this.tags);
     }
 }    
     
