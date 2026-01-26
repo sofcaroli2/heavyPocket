@@ -17,7 +17,7 @@ public class ExpenseTest {
     private final double AMOUNT = 100.0;
     private final String DESCRIPTION = "TestExpense";
     private final LocalDate DATE = LocalDate.now();
-    private final Set<TagImpl> TAGS = Set.of(new TagImpl("Food"));
+    private final Set<Tag> TAGS = Set.of(new TagImpl("Food"));
 
     @BeforeEach
     void setUp() {
