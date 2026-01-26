@@ -1,5 +1,6 @@
 package it.unibo.heavypocket.mvc.model.core;
 
+import java.util.Collectionss;
 import java.util.List;
 
 public class WalletImpl implements Wallet {
@@ -16,21 +17,23 @@ public class WalletImpl implements Wallet {
     
     @Override
     public String getName(){
-        return null;
+        return this.name;
     }
 
     @Override
     public List<Transaction> getTransactions(){
-        return null;
+        return Collections.unmodifiableList(this.transactions);
     }
 
     @Override
     public double getBalance(){
-        return 0;
+        return this.balance;
     }
 
     @Override
     public Wallet addTransaction(final Transaction transaction){
-        return this;
+        final List<Transaction> newTransactions = new ArrayList<>(this.transactions);
+        newTransactions.add(transaction);
+        return new WalletImpl(this.name, this.balance + transaction.getAmount(), newTransactions);
     }
 }

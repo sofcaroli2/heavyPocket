@@ -15,17 +15,17 @@ public abstract class AbstractTransaction implements Transaction {
     }
     
     @Override
-    public String getDescription() {
+    public final String getDescription() {
         return this.description;
     }   
 
     @Override
-    public double getAmount() {
+    public final double getAmount() {
         return this.amount;
     }
 
     @Override
-    public LocalDate getDate() {
+    public final LocalDate getDate() {
         return this.date;
     }
 }
