@@ -32,6 +32,6 @@ public class ExpenseTest {
         assertEquals(DATE, transaction.getDate());
         assertNotNull(((Expense) transaction).getTags());
         assertEquals(1, ((Expense) transaction).getTags().size());
-        assertTrue(((Expense) transaction).getTags().stream().anyMatch(tag -> tag.getName().equals("Food")));
+        assertTrue(((Expense) transaction).getTags().stream().anyMatch(tag -> tag.name().equals("Food")));
     }
 }

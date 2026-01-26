@@ -22,7 +22,7 @@ public class TagTest {
 
     @Test
     void testTagInitialization() {
-        assertNotNull(tag.getId());
-        assertEquals(TAG_NAME, tag.getName());
+        assertNotNull(tag.id());
+        assertEquals(TAG_NAME, tag.name());
     }
 }

@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public interface Tag {
 
-    UUID getId();
+    UUID id();
     
-    String getName();
+    String name();
 }
