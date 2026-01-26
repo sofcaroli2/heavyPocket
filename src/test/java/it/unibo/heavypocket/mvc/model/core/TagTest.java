@@ -13,15 +13,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TagTest {
     
     private Tag tag;
+    private final String TAG_NAME = "Food";
 
     @BeforeEach
     void setUp() {
-        this.tag = new TagImpl("Food");
+        this.tag = new TagImpl(TAG_NAME);
     }
 
     @Test
     void testTagInitialization() {
         assertNotNull(tag.getId());
-        assertEquals("Food", tag.getName());
+        assertEquals(TAG_NAME, tag.getName());
     }
 }

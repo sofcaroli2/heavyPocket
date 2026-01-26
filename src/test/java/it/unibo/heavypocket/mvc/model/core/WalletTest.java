@@ -1,6 +1,8 @@
 package it.unibo.heavypocket.mvc.model.core;
 
+import java.time.LocalDate;
 import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Assertions;
@@ -12,26 +14,32 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class WalletTest {
 
     private Wallet wallet;
+    private final double WALLET_AMOUNT = 0.0;
+    private final String NAME = "Wallet";
+    private final List<Transaction> TRANSACTIONS = List.of();
+    private final String TRANSACTION_DESCRIPTION = "Salary";
+    private final double TRANSACTION_AMOUNT = 100.0;
+    private final LocalDate TRANSACTION_DATE = LocalDate.now();
 
     @BeforeEach
     void setUp() {
-       this.wallet = new WalletImpl("Wallet", 0.0, List.of());
+       this.wallet = new WalletImpl(NAME, WALLET_AMOUNT, TRANSACTIONS);
     }
 
     @Test
     void testWalletInitialization() {
-        assertEquals("Wallet", wallet.getName());
-        assertEquals(0.0, wallet.getBalance());
+        assertEquals(NAME, wallet.getName());
+        assertEquals(WALLET_AMOUNT, wallet.getBalance());
         assertNotNull(wallet.getTransactions());
         assertTrue(wallet.getTransactions().isEmpty());
     }
 
     @Test
     void testAddTransaction() {
-        final var transaction = new TransactionImpl("Salary", 1000.0);
-        wallet.addTransaction(transaction);
+        final var transaction = new IncomeImpl(TRANSACTION_DESCRIPTION, TRANSACTION_AMOUNT, TRANSACTION_DATE);
+        this.wallet = wallet.addTransaction(transaction);
         assertEquals(1, wallet.getTransactions().size());
-        assertEquals(1000.0, wallet.getBalance());
-        assertEquals("Salary", wallet.getTransactions().get(0).getDescription());
+        assertEquals(WALLET_AMOUNT + TRANSACTION_AMOUNT, wallet.getBalance());
+        assertEquals(TRANSACTION_DESCRIPTION, wallet.getTransactions().get(0).getDescription());
     }
 }
