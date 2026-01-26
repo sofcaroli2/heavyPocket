@@ -1,7 +1,8 @@
 package it.unibo.heavypocket.mvc.model.core;
 
-import java.util.Collectionss;
+import java.util.Collections;
 import java.util.List;
+import java.util.ArrayList;
 
 public class WalletImpl implements Wallet {
 
@@ -12,7 +13,7 @@ public class WalletImpl implements Wallet {
     public WalletImpl(final String name, final double balance, final List<Transaction> transactions) {
         this.name = name;
         this.balance = balance;
-        this.transactions = transactions;
+        this.transactions = List.copyOf(transactions);
     }
     
     @Override

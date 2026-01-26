@@ -1,7 +1,7 @@
 package it.unibo.heavypocket.mvc.model.core;
 
 import java.time.LocalDate;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.Set;
 
 public class ExpenseImpl extends AbstractTransaction implements Expense {
@@ -13,11 +13,6 @@ public class ExpenseImpl extends AbstractTransaction implements Expense {
         this.tags = Set.copyOf(tags);
     }
 
-    @Override
-    public String getDescription(){
-        return null;
-    }
-    
     @Override
     public Set<Tag> getTags(){
         return Collections.unmodifiableSet(this.tags);
