@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.math.BigDecimal;
 
-public class ExpenseImpl extends AbstractTransaction implements Expense {
+public class ExpenseImpl extends TransactionImpl implements Expense {
 
     private final Set<Tag> tags;
 

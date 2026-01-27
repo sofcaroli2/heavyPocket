@@ -3,13 +3,13 @@ package it.unibo.heavypocket.mvc.model.core;
 import java.time.LocalDate;
 import java.math.BigDecimal;
 
-public abstract class AbstractTransaction implements Transaction {
+public class TransactionImpl implements Transaction {
 
     private final String description;
     private final BigDecimal amount;
     private final LocalDate date;
 
-    protected AbstractTransaction(final String description, final BigDecimal amount, final LocalDate date) {
+    protected TransactionImpl(final String description, final BigDecimal amount, final LocalDate date) {
         this.description = description;
         this.amount = amount;
         this.date = date;
