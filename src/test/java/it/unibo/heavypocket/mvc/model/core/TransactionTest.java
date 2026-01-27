@@ -27,9 +27,9 @@ class TransactionTest {
 
     @Test
     void testTransactionInitialization() {
+        assertNotNull(transaction.getId());
         assertEquals(DESCRIPTION, transaction.getDescription());
         assertEquals(AMOUNT, transaction.getAmount());
         assertEquals(DATE, transaction.getDate());
-        // assertTrue(transaction instanceof Income);
     }
 }

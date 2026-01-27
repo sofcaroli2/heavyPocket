@@ -27,6 +27,7 @@ class ExpenseTest {
 
     @Test
     void testExpenseInitialization() {
+        assertNotNull(transaction.getId());
         assertEquals(DESCRIPTION, transaction.getDescription());
         assertEquals(AMOUNT, transaction.getAmount());
         assertEquals(DATE, transaction.getDate());
