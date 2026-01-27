@@ -5,6 +5,6 @@ import java.util.UUID;
 public interface Tag {
 
     UUID id();
-    
+
     String name();
 }

@@ -14,11 +14,11 @@ public class TransactionImpl implements Transaction {
         this.amount = amount;
         this.date = date;
     }
-    
+
     @Override
     public final String getDescription() {
         return this.description;
-    }   
+    }
 
     @Override
     public final BigDecimal getAmount() {

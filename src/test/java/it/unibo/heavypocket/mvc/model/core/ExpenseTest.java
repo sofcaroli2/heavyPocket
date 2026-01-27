@@ -12,13 +12,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ExpenseTest {
-    
+class ExpenseTest {
+
     private Transaction transaction;
-    private final static BigDecimal AMOUNT = BigDecimal.valueOf(100.0);
-    private final static String DESCRIPTION = "TestExpense";
-    private final static LocalDate DATE = LocalDate.now();
-    private final static Set<Tag> TAGS = Set.of(new TagImpl("Food"));
+    private static final BigDecimal AMOUNT = BigDecimal.valueOf(100.0);
+    private static final String DESCRIPTION = "TestExpense";
+    private static final LocalDate DATE = LocalDate.now();
+    private static final Set<Tag> TAGS = Set.of(new TagImpl("Food"));
 
     @BeforeEach
     void setUp() {

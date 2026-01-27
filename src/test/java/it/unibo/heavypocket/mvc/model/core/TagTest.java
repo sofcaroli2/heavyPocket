@@ -9,11 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+class TagTest {
 
-public class TagTest {
-    
     private Tag tag;
-    private final static String TAG_NAME = "Food";
+    private static final String TAG_NAME = "Food";
 
     @BeforeEach
     void setUp() {

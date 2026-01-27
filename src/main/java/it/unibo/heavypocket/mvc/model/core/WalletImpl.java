@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.math.BigDecimal;
 
-public class WalletImpl implements Wallet {
+public final class WalletImpl implements Wallet {
 
     private final String name;
     private final BigDecimal balance;
@@ -16,24 +16,24 @@ public class WalletImpl implements Wallet {
         this.balance = balance;
         this.transactions = List.copyOf(transactions);
     }
-    
+
     @Override
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
     @Override
-    public List<Transaction> getTransactions(){
+    public List<Transaction> getTransactions() {
         return Collections.unmodifiableList(this.transactions);
     }
 
     @Override
-    public BigDecimal getBalance(){
+    public BigDecimal getBalance() {
         return this.balance;
     }
 
     @Override
-    public Wallet addTransaction(final Transaction transaction){
+    public Wallet addTransaction(final Transaction transaction) {
         final List<Transaction> newTransactions = new ArrayList<>(this.transactions);
         newTransactions.add(transaction);
         return new WalletImpl(this.name, this.balance.add(transaction.getAmount()), newTransactions);

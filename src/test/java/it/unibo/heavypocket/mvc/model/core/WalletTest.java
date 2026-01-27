@@ -12,15 +12,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class WalletTest {
+class WalletTest {
 
     private Wallet wallet;
-    private final static BigDecimal WALLET_AMOUNT = BigDecimal.valueOf(0.0);
-    private final static String NAME = "Wallet";
-    private final static List<Transaction> TRANSACTIONS = List.of();
-    private final static String TRANSACTION_DESCRIPTION = "Salary";
-    private final static BigDecimal TRANSACTION_AMOUNT = BigDecimal.valueOf(100.0);
-    private final static LocalDate TRANSACTION_DATE = LocalDate.now();
+    private static final BigDecimal WALLET_AMOUNT = BigDecimal.valueOf(0.0);
+    private static final String NAME = "Wallet";
+    private static final List<Transaction> TRANSACTIONS = List.of();
+    private static final String TRANSACTION_DESCRIPTION = "Salary";
+    private static final BigDecimal TRANSACTION_AMOUNT = BigDecimal.valueOf(100.0);
+    private static final LocalDate TRANSACTION_DATE = LocalDate.now();
 
     @BeforeEach
     void setUp() {

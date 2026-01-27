@@ -6,11 +6,12 @@ import java.util.Objects;
 import java.util.Set;
 import java.math.BigDecimal;
 
-public class ExpenseImpl extends TransactionImpl implements Expense {
+public final class ExpenseImpl extends TransactionImpl implements Expense {
 
     private final Set<Tag> tags;
 
-    public ExpenseImpl(final String description, final BigDecimal amount, final LocalDate date, final Set<? extends Tag> tags) {
+    public ExpenseImpl(final String description, final BigDecimal amount, final LocalDate date,
+            final Set<? extends Tag> tags) {
         super(description, amount, date);
         this.tags = Set.copyOf(tags);
     }
@@ -28,10 +29,10 @@ public class ExpenseImpl extends TransactionImpl implements Expense {
     @Override
     public boolean equals(final Object obj) {
         if (obj instanceof final ExpenseImpl other) {
-            return Objects.equals(this.getAmount(), other.getAmount()) &&
-                    Objects.equals(this.getDate(), other.getDate()) &&
-                    Objects.equals(this.getDescription(), other.getDescription()) &&
-                    Objects.equals(this.getTags(), other.getTags());
+            return Objects.equals(this.getAmount(), other.getAmount())
+                    && Objects.equals(this.getDate(), other.getDate())
+                    && Objects.equals(this.getDescription(), other.getDescription())
+                    && Objects.equals(this.getTags(), other.getTags());
         }
         return false;
     }
