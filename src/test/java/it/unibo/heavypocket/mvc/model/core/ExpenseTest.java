@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import java.math.BigDecimal;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,11 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ExpenseTest {
 
-    private Transaction transaction;
     private static final BigDecimal AMOUNT = BigDecimal.valueOf(100.0);
     private static final String DESCRIPTION = "TestExpense";
     private static final LocalDate DATE = LocalDate.now();
     private static final Set<Tag> TAGS = Set.of(new TagImpl("Food"));
+
+    private Transaction transaction;
 
     @BeforeEach
     void setUp() {

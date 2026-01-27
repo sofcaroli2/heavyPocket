@@ -1,18 +1,16 @@
 package it.unibo.heavypocket.mvc.model.core;
 
-import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Assertions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TagTest {
 
-    private Tag tag;
     private static final String TAG_NAME = "Food";
+
+    private Tag tag;
 
     @BeforeEach
     void setUp() {

@@ -6,7 +6,6 @@ import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Assertions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -14,14 +13,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class WalletTest {
 
-    private Wallet wallet;
-    private Transaction transaction;
     private static final BigDecimal WALLET_AMOUNT = BigDecimal.valueOf(0.0);
     private static final String NAME = "Wallet";
     private static final List<Transaction> TRANSACTIONS = List.of();
     private static final String TRANSACTION_DESCRIPTION = "Salary";
     private static final BigDecimal TRANSACTION_AMOUNT = BigDecimal.valueOf(100.0);
     private static final LocalDate TRANSACTION_DATE = LocalDate.now();
+    private static final String UPDATE_DESCRIPTION = "Updated Salary";
+    private static final BigDecimal UPDATE_AMOUNT = BigDecimal.valueOf(200.0);
+
+    private Wallet wallet;
+    private Transaction transaction;
 
     @BeforeEach
     void setUp() {
@@ -56,10 +58,10 @@ class WalletTest {
     @Test
     void testUpdateTransaction() {
         this.wallet = wallet.addTransaction(transaction);
-        final var newTransaction = new IncomeImpl("updateTransaction", BigDecimal.valueOf(200.0), TRANSACTION_DATE);
+        final var newTransaction = new IncomeImpl(UPDATE_DESCRIPTION, UPDATE_AMOUNT, TRANSACTION_DATE);
         this.wallet = wallet.updateTransaction(transaction.getId(), newTransaction);
         assertEquals(1, wallet.getTransactions().size());
-        assertEquals(WALLET_AMOUNT.add(BigDecimal.valueOf(200.0)), wallet.getBalance());
-        assertEquals("updateTransaction", wallet.getTransactions().get(0).getDescription());
+        assertEquals(WALLET_AMOUNT.add(UPDATE_AMOUNT), wallet.getBalance());
+        assertEquals(UPDATE_DESCRIPTION, wallet.getTransactions().get(0).getDescription());
     }
 }
