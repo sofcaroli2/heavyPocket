@@ -23,13 +23,14 @@ public final class ExpenseImpl extends TransactionImpl implements Expense {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getAmount(), this.getDate(), this.getDescription(), this.getTags());
+        return Objects.hash(this.getId(), this.getAmount(), this.getDate(), this.getDescription(), this.getTags());
     }
 
     @Override
     public boolean equals(final Object obj) {
         if (obj instanceof final ExpenseImpl other) {
-            return Objects.equals(this.getAmount(), other.getAmount())
+            return Objects.equals(this.getId(), other.getId())
+                    && Objects.equals(this.getAmount(), other.getAmount())
                     && Objects.equals(this.getDate(), other.getDate())
                     && Objects.equals(this.getDescription(), other.getDescription())
                     && Objects.equals(this.getTags(), other.getTags());

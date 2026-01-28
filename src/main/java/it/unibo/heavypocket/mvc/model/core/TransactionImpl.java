@@ -41,7 +41,7 @@ public class TransactionImpl implements Transaction {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getId(), this.getAmount(), this.getDate(), this.getDescription(), this.getTags());
+        return Objects.hash(this.getId(), this.getAmount(), this.getDate(), this.getDescription());
     }
 
     @Override
