@@ -9,26 +9,26 @@ public final class TagCollectionImpl implements TagCollection {
 
     private final Set<Tag> tags;
 
-    public TagCollectionImpl(Set<Tag> tags) {
+    public TagCollectionImpl(final Set<Tag> tags) {
         this.tags = Set.copyOf(tags);
     }
 
     @Override
-    public TagCollection addTag(Tag tag) {
+    public TagCollection addTag(final Tag tag) {
         final Set<Tag> newTags = new HashSet<>(this.tags);
         newTags.add(tag); 
         return new TagCollectionImpl(newTags);
     }
 
     @Override
-    public TagCollection removeTag(Tag tag) {
+    public TagCollection removeTag(final Tag tag) {
         final Set<Tag> newTags = new HashSet<>(this.tags);
         newTags.remove(tag);
         return new TagCollectionImpl(newTags);
     }
 
     @Override
-    public TagCollection updateTag(UUID id, Tag newTag) {
+    public TagCollection updateTag(final UUID id, final Tag newTag) {
         final Set<Tag> newTags = new HashSet<>(this.tags);
         newTags.removeIf(tag -> tag.id().equals(id));
         newTags.add(newTag);
@@ -36,7 +36,7 @@ public final class TagCollectionImpl implements TagCollection {
     }
 
     @Override
-    public boolean containsTag(Tag tag) {
+    public boolean containsTag(final Tag tag) {
         return this.tags.contains(tag);
     }
 
@@ -46,10 +46,10 @@ public final class TagCollectionImpl implements TagCollection {
     }
 
     @Override
-    public Optional<Tag> getTagById(UUID id) {
+    public Optional<Tag> getTagById(final UUID id) {
         return this.tags.stream()
                 .filter(tag -> tag.id().equals(id))
                 .findFirst();
     }
-    
+
 }

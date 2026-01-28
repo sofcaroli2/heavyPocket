@@ -16,7 +16,8 @@ class ExpenseTest {
     private static final BigDecimal AMOUNT = BigDecimal.valueOf(100.0);
     private static final String DESCRIPTION = "TestExpense";
     private static final LocalDate DATE = LocalDate.now();
-    private static final Set<Tag> TAGS = Set.of(new TagImpl("Food"));
+    private static final String TAG_NAME = "Food";
+    private static final Set<Tag> TAGS = Set.of(new TagImpl(TAG_NAME));
 
     private Transaction transaction;
 
@@ -33,6 +34,6 @@ class ExpenseTest {
         assertEquals(DATE, transaction.getDate());
         assertNotNull(((Expense) transaction).getTags());
         assertEquals(1, ((Expense) transaction).getTags().size());
-        assertTrue(((Expense) transaction).getTags().stream().anyMatch(tag -> tag.name().equals("Food")));
+        assertTrue(((Expense) transaction).getTags().stream().anyMatch(tag -> tag.name().equals(TAG_NAME)));
     }
 }

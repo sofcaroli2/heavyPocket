@@ -40,17 +40,15 @@ public class TransactionImpl implements Transaction {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(this.getId(), this.getAmount(), this.getDate(), this.getDescription());
+    public final int hashCode() {
+        return Objects.hash(this.getId(), this.getAmount());
     }
 
     @Override
-    public boolean equals(final Object obj) {
+    public final boolean equals(final Object obj) {
         if (obj instanceof final TransactionImpl other) {
             return Objects.equals(this.getId(), other.getId())
-                    && Objects.equals(this.getAmount(), other.getAmount())
-                    && Objects.equals(this.getDate(), other.getDate())
-                    && Objects.equals(this.getDescription(), other.getDescription());
+                    && Objects.equals(this.getAmount(), other.getAmount());
         }
         return false;
     }

@@ -1,6 +1,5 @@
 package it.unibo.heavypocket.mvc.model.core;
 
-import java.beans.Transient;
 import java.util.Set;
 
 import org.junit.jupiter.api.Test;

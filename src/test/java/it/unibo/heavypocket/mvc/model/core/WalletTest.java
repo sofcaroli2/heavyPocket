@@ -1,7 +1,6 @@
 package it.unibo.heavypocket.mvc.model.core;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Test;
@@ -15,7 +14,6 @@ class WalletTest {
 
     private static final BigDecimal WALLET_AMOUNT = BigDecimal.ZERO;
     private static final String NAME = "Wallet";
-    private static final List<Transaction> TRANSACTIONS = List.of();
     private static final String TRANSACTION_DESCRIPTION = "Salary";
     private static final BigDecimal TRANSACTION_AMOUNT = BigDecimal.valueOf(100.0);
     private static final LocalDate TRANSACTION_DATE = LocalDate.now();

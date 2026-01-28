@@ -11,7 +11,7 @@ public interface TagCollection {
     TagCollection removeTag(Tag tag);
 
     TagCollection updateTag(UUID id, Tag newTag);
-    
+
     boolean containsTag(Tag tag);
 
     Set<Tag> getAllTags();

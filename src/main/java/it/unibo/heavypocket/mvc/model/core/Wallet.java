@@ -12,9 +12,9 @@ public interface Wallet {
 
     BigDecimal getBalance();
 
-    Wallet addTransaction(final Transaction transaction);
+    Wallet addTransaction(Transaction transaction);
 
-    Wallet removeTransaction(final UUID transactionId);
+    Wallet removeTransaction(UUID transactionId);
 
-    Wallet updateTransaction(final UUID oldTransactionId, final Transaction newTransaction);
+    Wallet updateTransaction(UUID oldTransactionId, Transaction newTransaction);
 }
