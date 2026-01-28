@@ -1,6 +1,7 @@
 package it.unibo.heavypocket.mvc.model.core;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.UUID;
 import java.math.BigDecimal;
 
@@ -36,5 +37,21 @@ public class TransactionImpl implements Transaction {
     @Override
     public final LocalDate getDate() {
         return this.date;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.getId(), this.getAmount(), this.getDate(), this.getDescription(), this.getTags());
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+        if (obj instanceof final TransactionImpl other) {
+            return Objects.equals(this.getId(), other.getId())
+                    && Objects.equals(this.getAmount(), other.getAmount())
+                    && Objects.equals(this.getDate(), other.getDate())
+                    && Objects.equals(this.getDescription(), other.getDescription());
+        }
+        return false;
     }
 }
