@@ -1,6 +1,6 @@
 package it.unibo.heavypocket.mvc.model.core;
 
-public class Wallets {
+public final class Wallets {
     
     private Wallets() {}
 

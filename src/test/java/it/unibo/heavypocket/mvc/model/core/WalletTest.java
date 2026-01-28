@@ -34,7 +34,7 @@ class WalletTest {
     @Test
     void testWalletInitialization() {
         assertEquals(NAME, wallet.getName());
-        assertEquals(WALLET_AMOUNT, wallet.getBalance());
+        assertEquals(0, wallet.getBalance().compareTo(WALLET_AMOUNT));
         assertNotNull(wallet.getTransactions());
         assertTrue(wallet.getTransactions().isEmpty());
     }
@@ -52,7 +52,7 @@ class WalletTest {
         this.wallet = wallet.addTransaction(transaction);
         this.wallet = wallet.removeTransaction(transaction.getId());
         assertEquals(0, wallet.getTransactions().size());
-        assertEquals(WALLET_AMOUNT, wallet.getBalance());
+        assertEquals(0, wallet.getBalance().compareTo(WALLET_AMOUNT));
     }
 
     @Test

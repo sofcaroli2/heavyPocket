@@ -12,7 +12,7 @@ public class TransactionImpl implements Transaction {
     private final BigDecimal amount;
     private final LocalDate date;
 
-    protected TransactionImpl(final String description, final BigDecimal amount, final LocalDate date) {
+    public TransactionImpl(final String description, final BigDecimal amount, final LocalDate date) {
         this.id = UUID.randomUUID();
         this.description = description;
         this.amount = amount;
