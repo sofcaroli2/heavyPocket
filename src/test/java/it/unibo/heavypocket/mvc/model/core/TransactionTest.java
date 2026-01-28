@@ -19,7 +19,7 @@ class TransactionTest {
 
     @BeforeEach
     void setUp() {
-        this.transaction = new IncomeImpl(DESCRIPTION, AMOUNT, DATE);
+        this.transaction = Transactions.createIncome(DESCRIPTION, AMOUNT, DATE);
     }
 
     @Test

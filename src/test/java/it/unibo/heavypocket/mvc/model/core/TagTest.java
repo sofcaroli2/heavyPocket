@@ -14,7 +14,7 @@ class TagTest {
 
     @BeforeEach
     void setUp() {
-        this.tag = new TagImpl(TAG_NAME);
+        this.tag = Tags.createTag(TAG_NAME);
     }
 
     @Test

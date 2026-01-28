@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class WalletTest {
 
-    private static final BigDecimal WALLET_AMOUNT = BigDecimal.valueOf(0.0);
+    private static final BigDecimal WALLET_AMOUNT = BigDecimal.ZERO;
     private static final String NAME = "Wallet";
     private static final List<Transaction> TRANSACTIONS = List.of();
     private static final String TRANSACTION_DESCRIPTION = "Salary";
@@ -27,8 +27,8 @@ class WalletTest {
 
     @BeforeEach
     void setUp() {
-        this.wallet = new WalletImpl(NAME, WALLET_AMOUNT, TRANSACTIONS);
-        this.transaction = new IncomeImpl(TRANSACTION_DESCRIPTION, TRANSACTION_AMOUNT, TRANSACTION_DATE);
+        this.wallet = Wallets.createWallet(NAME);
+        this.transaction = Transactions.createIncome(TRANSACTION_DESCRIPTION, TRANSACTION_AMOUNT, TRANSACTION_DATE);
     }
 
     @Test
@@ -58,7 +58,7 @@ class WalletTest {
     @Test
     void testUpdateTransaction() {
         this.wallet = wallet.addTransaction(transaction);
-        final var newTransaction = new IncomeImpl(UPDATE_DESCRIPTION, UPDATE_AMOUNT, TRANSACTION_DATE);
+        final var newTransaction = Transactions.createIncome(UPDATE_DESCRIPTION, UPDATE_AMOUNT, TRANSACTION_DATE);
         this.wallet = wallet.updateTransaction(transaction.getId(), newTransaction);
         assertEquals(1, wallet.getTransactions().size());
         assertEquals(WALLET_AMOUNT.add(UPDATE_AMOUNT), wallet.getBalance());

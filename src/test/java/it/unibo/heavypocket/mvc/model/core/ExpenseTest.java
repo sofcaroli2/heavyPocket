@@ -22,7 +22,7 @@ class ExpenseTest {
 
     @BeforeEach
     void setUp() {
-        this.transaction = new ExpenseImpl(DESCRIPTION, AMOUNT, DATE, TAGS);
+        this.transaction = Transactions.createExpense(DESCRIPTION, AMOUNT, DATE, TAGS);
     }
 
     @Test
