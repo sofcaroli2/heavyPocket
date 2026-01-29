@@ -13,10 +13,14 @@ public final class TagCollectionImpl implements TagCollection {
         this.tags = Set.copyOf(tags);
     }
 
+    public TagCollectionImpl() {
+        this.tags = Set.of();
+    }
+
     @Override
     public TagCollection addTag(final Tag tag) {
         final Set<Tag> newTags = new HashSet<>(this.tags);
-        newTags.add(tag); 
+        newTags.add(tag);
         return new TagCollectionImpl(newTags);
     }
 
