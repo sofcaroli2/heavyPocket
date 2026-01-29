@@ -56,7 +56,7 @@ class WalletTest {
     @Test
     void testUpdateTransaction() {
         this.wallet = wallet.addTransaction(transaction);
-        final var newTransaction = Transactions.createIncome(UPDATE_DESCRIPTION, UPDATE_AMOUNT, TRANSACTION_DATE);
+        final Transaction newTransaction = Transactions.createIncome(UPDATE_DESCRIPTION, UPDATE_AMOUNT, TRANSACTION_DATE);
         this.wallet = wallet.updateTransaction(transaction.getId(), newTransaction);
         assertEquals(1, wallet.getTransactions().size());
         assertEquals(WALLET_AMOUNT.add(UPDATE_AMOUNT), wallet.getBalance());

@@ -29,4 +29,19 @@ class TransactionTest {
         assertEquals(AMOUNT, transaction.getAmount());
         assertEquals(DATE, transaction.getDate());
     }
+
+    @Test
+    void testTransactionEquality() {
+        final Transaction anotherTransaction = Transactions.createIncome(DESCRIPTION, AMOUNT, DATE);
+        assertEquals(false, transaction.equals(anotherTransaction));
+        assertEquals(true, transaction.equals(transaction));
+    }
+
+    @Test
+    void testTransactionHashCode() {
+        final Transaction anotherTransaction = Transactions.createIncome(DESCRIPTION, AMOUNT, DATE);
+        assertNotNull(transaction.hashCode());
+        assertNotNull(anotherTransaction.hashCode());
+        assertEquals(false, transaction.hashCode() == anotherTransaction.hashCode());
+    }
 }
